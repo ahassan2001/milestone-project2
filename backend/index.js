@@ -19,7 +19,6 @@ mongoose.connection.on('connected', () => {
 
 app.use('/api/tasks', require('./controllers/tasks'));
 app.use('/api/users', require('./controllers/userController'));
-app.use('/api/routes', require('./routes/userRoutes'));
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
