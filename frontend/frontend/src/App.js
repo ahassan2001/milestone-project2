@@ -18,7 +18,7 @@ function App() {
   const [username, setUsername] = useState('');
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/tasks')
+    axios.get('http://localhost:5001/api/tasks')
     .then(res => setTasks(res.data))
     .catch(err => console.log(err));
   }, []);
@@ -33,7 +33,7 @@ function App() {
 
   const handleNewSubmit = (e) => {
     e.preventDefault();
-      axios.post('http://localhost:5000/api/tasks', newTask)
+      axios.post('http://localhost:5001/api/tasks', newTask)
         .then(res => {
           setTasks([...tasks, res.data]);
           setNewTask({
@@ -49,7 +49,7 @@ function App() {
 
   const handleEditSubmit = (e) => {
     e.preventDefault();
-      axios.put(`http://localhost:5000/api/tasks/${newTask._id}`, newTask)
+      axios.put(`http://localhost:5001/api/tasks/${newTask._id}`, newTask)
         .then(res => {
           const updatedTasks = tasks.map(task =>
             task._id === newTask._id ? res.data : task
@@ -71,7 +71,7 @@ function App() {
   };
 
   const deleteTask = (taskId) => {
-    axios.delete(`http://localhost:5000/api/tasks/${taskId}`)
+    axios.delete(`http://localhost:5001/api/tasks/${taskId}`)
       .then(() => {
         const updatedTasks = tasks.filter(task => task._id !== taskId);
         setTasks(updatedTasks);

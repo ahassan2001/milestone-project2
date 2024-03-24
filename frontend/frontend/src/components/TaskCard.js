@@ -13,7 +13,7 @@ function TaskCard(props) {
 
 const handleSubmit = (e) => {
     e.preventDefault();
-    axios.put(`http://localhost:5000/api/tasks/${props.task._id}`, editedTask)
+    axios.put(`http://localhost:5001/api/tasks/${props.task._id}`, editedTask)
         .then(res => {
             setMode("view");
         })
