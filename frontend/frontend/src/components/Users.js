@@ -7,7 +7,7 @@ function Users() {
     ]);
 
     useEffect(() => {
-        axios.get('http://localhost:5001/api/users')
+        axios.get('https://milestone-project2.vercel.app/api/users')
             .then(res => setUsers(res.data))
             .catch(err => console.log(err));
     }, []);
