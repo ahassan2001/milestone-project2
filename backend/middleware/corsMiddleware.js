@@ -6,7 +6,7 @@ const router = express.Router;
 const app = express();
 const PORT = process.env.PORT || 5001;
 
-const allowedOrigins = ['https://milestone-project2-seven.vercel.app'];
+const allowedOrigins = ['mongodb+srv://ah4487855:ZinabHassan2009@ahmed.6nkfejd.mongodb.net/?retryWrites=true&w=majority&appName=Ahmed'];
 app.use(cors({
     origin: allowedOrigins,
 }));
