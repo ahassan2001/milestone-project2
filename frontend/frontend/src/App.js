@@ -35,7 +35,7 @@ function App() {
 
   const handleNewSubmit = (e) => {
     e.preventDefault();
-      axios.post('https://milestone-project2-seven.vercel.app/api/tasks', newTask)
+      axios.get('https://milestone-project2-seven.vercel.app/api/tasks', newTask)
         .then(res => {
           setTasks([...tasks, res.data]);
           setNewTask({
