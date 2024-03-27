@@ -7,7 +7,7 @@ function Users() {
     ]);
 
     useEffect(() => {
-        axios.get('https://milestone-project2.vercel.app/api/users')
+        axios.get('https://milestone-project2-seven.vercel.app/api/users')
             .then(res => setUsers(res.data))
             .catch(err => console.log(err));
     }, []);

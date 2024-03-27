@@ -18,7 +18,7 @@ function SignIn(props) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post('https://milestone-project2.vercel.app/api/users', user)
+        axios.post('https://milestone-project2-seven.vercel.app/api/users', user)
             .then(res => {
                 console.log(res.data);
                 props.onSignIn();
