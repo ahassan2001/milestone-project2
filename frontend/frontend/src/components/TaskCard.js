@@ -13,7 +13,7 @@ function TaskCard(props) {
 
 const handleSubmit = (e) => {
     e.preventDefault();
-    axios.put(`https://milestone-project2-seven.vercel.app/api/tasks/${props.task._id}`, editedTask)
+    axios.get(`https://milestone-project2-seven.vercel.app/api/tasks/${props.task._id}`, editedTask)
         .then(res => {
             setMode("view");
         })
