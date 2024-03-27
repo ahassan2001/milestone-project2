@@ -19,8 +19,15 @@ mongoose.connection.on('connected', () => {
   console.log('Connected to MongoDB');
 });
 
-app.use('/api/tasks', require('./controllers/tasks'));
-app.use('/api/users', require('./controllers/userController'));
+app.use('/api/tasks', require('./controllers/tasks'), cors({
+  methods: ['GET', 'POST', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
+app.use('/api/users', require('./controllers/userController'), cors({
+  methods: ['POST'],
+  allowedHeaders: ['Content-Type']
+}));
+app.use(corsMiddleware);
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
