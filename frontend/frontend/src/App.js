@@ -5,6 +5,8 @@ import TaskCard from './components/TaskCard';
 import Users from './components/Users';
 import SignIn from './components/SignIn';
 
+const clientURL = process.env.CLIENT_URL;
+
 function App() {
   const [tasks, setTasks] = useState([]);
   const [newTask, setNewTask] = useState({
@@ -83,6 +85,7 @@ function App() {
     setIsSignedIn(true);
     setUsername(username);
   };
+
 
   return (
     <div className="container">

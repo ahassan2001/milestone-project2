@@ -29,6 +29,8 @@ app.use('/api/users', require('./controllers/userController'), cors({
 }));
 app.use(corsMiddleware);
 
+const clientURL = process.env.CLIENT_URL;
+
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
