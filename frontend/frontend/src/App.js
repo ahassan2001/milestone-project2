@@ -89,8 +89,6 @@ function App() {
 
   return (
     <div className="container">
-      {!isSignedIn && <SignIn onSignIn={handleSignIn} />}
-      {isSignedIn && (
         <>
           <h1>Task Manager</h1>
           <form onSubmit={handleNewSubmit}>
@@ -114,7 +112,6 @@ function App() {
             <TaskCard key={index} task={task} handleDelete={deleteTask} handleEdit={handleEditSubmit} />
           ))}
         </>
-      )}
     </div>
   );
 }
