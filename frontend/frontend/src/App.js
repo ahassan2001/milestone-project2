@@ -110,7 +110,7 @@ function App() {
             <br/>
             <button type="submit" className="add-button">Add Task</button>
           </form>
-          {tasks.map((task, index) => ( 
+          {Array.isArray(tasks) && tasks.map((task, index) => ( 
             <TaskCard key={index} task={task} handleDelete={deleteTask} handleEdit={handleEditSubmit} />
           ))}
         </>
