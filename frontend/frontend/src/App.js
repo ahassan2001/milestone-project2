@@ -51,7 +51,7 @@ function App() {
 
   const handleEditSubmit = (e) => {
     e.preventDefault();
-      axios.put(`https://milestone-project2-seven.vercel.app/api/tasks/${newTask._id}`, newTask)
+      axios.post(`https://milestone-project2-seven.vercel.app/api/tasks/${newTask._id}`, newTask)
         .then(res => {
           const updatedTasks = tasks.map(task =>
             task._id === newTask._id ? res.data : task
