@@ -17,7 +17,7 @@ function App() {
     dueDate: '',
   });
   const [isSignedIn, setIsSignedIn] = useState(false);
-  const [username, setUsername] = useState('');
+  const [username, setUsername] = useState([]);
 
   useEffect(() => {
     axios.get('https://milestone-project2-seven.vercel.app/api/tasks')
