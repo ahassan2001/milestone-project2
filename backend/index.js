@@ -24,7 +24,7 @@ app.use('/api/tasks', require('./controllers/tasks'), cors({
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
 app.use('/api/users', require('./controllers/userController'), cors({
-  methods: ['POST'],
+  methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type']
 }));
 app.use(corsMiddleware);
