@@ -3,17 +3,18 @@ import axios from 'axios';
 
 function TaskCard(props) {
     const [mode, setMode] = useState("view")
-    const [editedTask, setEditedTask] = useState({
-        title: props.task.title,
-        description: props.task.description,
-        priority: props.task.priority,
-        category: props.task.category || '',
-        dueDate: props.task.dueDate || '',
-    });
+    const initialEditedTask = props.task || {
+        title: '',
+        description: '',
+        priority: 1,
+        category: '',
+        dueDate: '',
+    };
+    const [editedTask, setEditedTask] = useState(initialEditedTask);
 
 const handleSubmit = (e) => {
     e.preventDefault();
-    axios.get(`https://milestone-project2-seven.vercel.app/api/tasks/${props.task._id}`, editedTask)
+    axios.put(`https://milestone-project2-seven.vercel.app/api/tasks/${props.task._id}`, editedTask)
         .then(res => {
             setMode("view");
         })
