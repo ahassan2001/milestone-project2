@@ -20,7 +20,7 @@ function App() {
   const [username, setUsername] = useState([]);
 
   useEffect(() => {
-    axios.post('https://milestone-project2-seven.vercel.app/api/tasks')
+    axios.get('https://milestone-project2-seven.vercel.app/api/tasks')
     .then(res => setTasks(res.data))
     .catch(err => console.log(err));
   }, []);
