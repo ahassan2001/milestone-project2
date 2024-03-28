@@ -5,7 +5,7 @@ This project is a MERN (MongoDB, Express, React, Node.js) stack task management 
 ## Features
 
 - Create, Read, Update, and Delete (CRUD) operations for tasks
-- User authentication for sign-in
+- User authentication for sign-in (Can sign in with any username and password)
 - Task management with categories and due dates
 - Responsive design for mobile and desktop
 
